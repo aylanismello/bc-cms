@@ -1,7 +1,12 @@
+import React from 'react';
+import { IoIosRadio } from "react-icons/io";
+// https://react-icons.netlify.com/#/icons/io
+
 export default {
   title: "Episode",
   name: "episode",
   type: "document",
+  icon: IoIosRadio,
   fields: [
     {
       title: "Name",
@@ -64,5 +69,20 @@ export default {
         }
       ]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      name: "name",
+      description: "description",
+      artworkUrl: "artworkUrl"
+    },
+    prepare(selection) {
+      const { name, description, artworkUrl } = selection;
+      return {
+        title: name,
+        subtitle: description,
+        media: <img src={artworkUrl} />
+      };
+    }
+  }
 };

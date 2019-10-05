@@ -1,7 +1,11 @@
+import { FaMusic } from "react-icons/fa";
+
+
 export default {
   title: "Track",
   name: "track",
   type: "document",
+  icon: FaMusic,
   fields: [
     {
       title: "Name",
@@ -42,12 +46,25 @@ export default {
       title: "Artwork Url",
       name: "artworkUrl",
       type: "url"
+    },
+    {
+      title: "Episode Number",
+      name: "episodeNumber",
+      type: "number"
     }
   ],
   preview: {
     select: {
       title: "name",
-      subtitle: "timeCode"
+      timeCode: "timeCode",
+      episodeNumber: "episodeNumber"
+    },
+    prepare(selection) {
+      const {title, timeCode, episodeNumber } = selection;
+      return {
+        title: `(${episodeNumber}) - ${title}`,
+        subtitle: timeCode
+      }
     }
   },
   orderings: [

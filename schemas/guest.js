@@ -12,14 +12,30 @@ export default {
       type: "string"
     },
     {
+      title: "Soundcloud Url",
+      name: "soundcloudUrl",
+      type: "url"
+    },
+    {
+      title: "Other Name",
+      name: "otherName",
+      type: "string"
+    },
+    {
+      title: "Other Soundcloud Url",
+      name: "otherSoundcloudUrl",
+      type: "string"
+    },
+    {
       title: "Image Url",
       name: "imageUrl",
       type: "url"
     },
     {
-      title: "Soundcloud Url",
-      name: "soundcloudUrl",
-      type: "url"
+      title: "Guest Type",
+      name: "guestType",
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       title: "Location",

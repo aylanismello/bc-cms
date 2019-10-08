@@ -1,6 +1,5 @@
 import { FaMusic } from "react-icons/fa";
 
-
 export default {
   title: "Track",
   name: "track",
@@ -10,7 +9,8 @@ export default {
     {
       title: "Name",
       name: "name",
-      type: "string"
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       title: "Permalink Url",
@@ -25,7 +25,8 @@ export default {
     {
       title: "Time Code",
       name: "timeCode",
-      type: "string"
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       title: "Streaming Platform",
@@ -50,7 +51,14 @@ export default {
     {
       title: "Episode Number",
       name: "episodeNumber",
-      type: "number"
+      type: "number",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Flames",
+      name: "flames",
+      type: "number",
+      validation: Rule => Rule.min(1).max(5)
     }
   ],
   preview: {
@@ -60,11 +68,11 @@ export default {
       episodeNumber: "episodeNumber"
     },
     prepare(selection) {
-      const {title, timeCode, episodeNumber } = selection;
+      const { title, timeCode, episodeNumber } = selection;
       return {
         title: `(${episodeNumber}) - ${title}`,
         subtitle: timeCode
-      }
+      };
     }
   },
   orderings: [

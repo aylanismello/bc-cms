@@ -19,8 +19,18 @@ export default {
       type: "text"
     },
     {
+      title: "Mini Description",
+      name: "miniDescription",
+      type: "text"
+    },
+    {
       title: "Artwork Url",
       name: "artworkUrl",
+      type: "string"
+    },
+    {
+      title: "RealArtwork Url",
+      name: "realArtworkUrl",
       type: "url"
     },
     {
@@ -32,6 +42,12 @@ export default {
       title: "Spotify Url",
       name: "spotifyUrl",
       type: "url"
+    },
+    {
+      title: "Episode Number",
+      name: "episodeNumber",
+      type: "number",
+      validation: Rule => Rule.required()
     },
     {
       title: "Tracklist",
@@ -68,20 +84,36 @@ export default {
           ]
         }
       ]
+    },
+    {
+      title: "Guest Mixes",
+      name: "guestMixes",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "guestMix"}]
+        }
+      ]
+    },
+    {
+      title: "Photo Credit",
+      name: "photoCredit",
+      type: "string"
     }
   ],
   preview: {
     select: {
       name: "name",
       description: "description",
-      artworkUrl: "artworkUrl"
+      realArtworkUrl: "realArtworkUrl"
     },
     prepare(selection) {
-      const { name, description, artworkUrl } = selection;
+      const { name, description, realArtworkUrl } = selection;
       return {
         title: name,
         subtitle: description,
-        media: <img src={artworkUrl} />
+        media: <img src={realArtworkUrl} />
       };
     }
   }

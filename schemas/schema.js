@@ -7,6 +7,7 @@ import track from './track';
 import episodeSelection from './episodeSelection';
 import episode from './episode';
 import guest from './guest';
+import guestMix from './guestMix';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,6 +18,7 @@ export default createSchema({
   types: schemaTypes.concat([
     episode,
     track,
-    guest
+    guest,
+    guestMix
   ])
 })

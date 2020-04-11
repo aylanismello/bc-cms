@@ -7,6 +7,11 @@ export default {
   icon: FaMusic,
   fields: [
     {
+      title: "Name",
+      name: "name",
+      type: "string"
+    },
+    {
       title: "Guest",
       name: "guest",
       type: "reference",

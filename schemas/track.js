@@ -59,7 +59,12 @@ export default {
       name: "flames",
       type: "number",
       validation: Rule => Rule.min(1).max(5)
-    }
+    },
+    {
+      title: "Purchase Url",
+      name: "purchaseUrl",
+      type: "url"
+    },
   ],
   preview: {
     select: {

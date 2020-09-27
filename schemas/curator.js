@@ -1,51 +1,51 @@
 import { IoIosPerson } from "react-icons/io";
 
 export default {
-  title: "Guest",
-  name: "guest",
+  title: "Curator",
+  name: "curator",
   icon: IoIosPerson,
   type: "document",
   fields: [
     {
       title: "Name",
       name: "name",
-      type: "string"
+      type: "string",
     },
     {
       title: "Soundcloud Url",
       name: "soundcloudUrl",
-      type: "url"
+      type: "url",
     },
     {
       title: "Other Name",
       name: "otherName",
-      type: "string"
+      type: "string",
     },
     {
       title: "Other Soundcloud Url",
       name: "otherSoundcloudUrl",
-      type: "string"
+      type: "string",
     },
     {
       title: "Image Url",
       name: "imageUrl",
-      type: "url"
+      type: "url",
     },
     {
-      title: "Guest Type",
-      name: "guestType",
+      title: "Curator Type",
+      name: "curatorType",
       type: "string",
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Is Rising Enabled",
       name: "isRisingEnabled",
-      type: "boolean"
+      type: "boolean",
     },
     {
-      title: 'Is Guest',
-      name: 'isGuest',
-      type: 'boolean'
+      title: "Is Guest",
+      name: "isGuest",
+      type: "boolean",
     },
     {
       title: "Location",
@@ -55,24 +55,24 @@ export default {
         {
           title: "City",
           name: "city",
-          type: "string"
+          type: "string",
         },
         {
           title: "Region",
           name: "region",
-          type: "string"
+          type: "string",
         },
         {
           title: "Country",
           name: "country",
-          type: "string"
-        }
-      ]
-    }
+          type: "string",
+        },
+      ],
+    },
   ],
   initialValue: {
     isRisingEnabled: true,
-    guestType: 'label',
-    isGuest: false
-  }
+    curatorType: "label",
+    isGuest: false,
+  },
 };

@@ -44,6 +44,16 @@ export default {
       type: "url"
     },
     {
+      title: "Featured Album",
+      name: "featuredAlbum",
+      type: "string"
+    },
+    {
+      title: "Featured Album URL",
+      name: "featuredAlbumURL",
+      type: "url"
+    },
+    {
       title: "Episode Number",
       name: "episodeNumber",
       type: "number",
@@ -70,7 +80,7 @@ export default {
           title: "Guest",
           name: "guest",
           type: "reference",
-          to: [{ type: "guest" }]
+          to: [{ type: "curator" }]
         },
         {
           title: "Tracklist",

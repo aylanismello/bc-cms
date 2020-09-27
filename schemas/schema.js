@@ -6,7 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import track from './track';
 import episodeSelection from './episodeSelection';
 import episode from './episode';
-import guest from './guest';
+// import guest from './guest'; //RIP
+import curator from './curator';
 import guestMix from './guestMix';
 import event from './event';
 
@@ -19,7 +20,7 @@ export default createSchema({
   types: schemaTypes.concat([
     episode,
     track,
-    guest,
+    curator,
     guestMix,
     event
   ])

@@ -15,7 +15,7 @@ export default {
       title: "Guest",
       name: "guest",
       type: "reference",
-      to: [{ type: "guest" }]
+      to: [{ type: "curator" }]
     },
     {
       title: "Tracklist",
